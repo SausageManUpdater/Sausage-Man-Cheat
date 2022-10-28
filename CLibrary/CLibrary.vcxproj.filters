@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{2c5feb6a-75a9-4548-a014-485cff20a6b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library">
+      <UniqueIdentifier>{05760034-151f-43ea-a00d-445105aeac81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\detours">
+      <UniqueIdentifier>{ce63d7e1-da79-426d-91f8-b22a325abf88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\ImGui">
+      <UniqueIdentifier>{c6361705-f706-4cf4-90e6-54ab63782742}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\Json">
+      <UniqueIdentifier>{f77a07e1-af74-4bf8-ac9b-6bd9c86d6779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\simpleini">
+      <UniqueIdentifier>{a301a49f-a78c-4cf3-ae78-1abaf2fc8c1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\magic_enum">
+      <UniqueIdentifier>{e466f6aa-5e20-44ff-92af-ae3c58a08041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\stb">
+      <UniqueIdentifier>{4106bbdb-1717-4dfc-ab88-49171c4302dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{8e759a31-1702-43f2-a3a2-0e4cc5378fc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\fmt">
+      <UniqueIdentifier>{b6f3b240-b34c-45f1-9c72-c73b5aa53094}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\akebi">
+      <UniqueIdentifier>{51543998-49b3-4079-99f1-00f27b800997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\imnodes">
+      <UniqueIdentifier>{03ae8431-0c0b-45dc-aead-4f7a74f897b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Library\impot">
+      <UniqueIdentifier>{f46b73f6-9dde-4a2e-925f-499b96817b06}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\CPP\Log.cpp">
+      <Filter>资源文件\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\CPP\Process.cpp">
+      <Filter>资源文件\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_demo.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_draw.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_impl_dx11.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_stdlib.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_tables.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_widgets.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_impl_dx9.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_impl_dx10.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_impl_win32.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\CPP\Text.cpp">
+      <Filter>资源文件\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\CPP\Memory.cpp">
+      <Filter>资源文件\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\CPP\Time.cpp">
+      <Filter>资源文件\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\imnodes\imnodes.cpp">
+      <Filter>资源文件\Library\imnodes</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\implot\implot.cpp">
+      <Filter>资源文件\Library\impot</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\implot\implot_demo.cpp">
+      <Filter>资源文件\Library\impot</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\implot\implot_items.cpp">
+      <Filter>资源文件\Library\impot</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Akebi\dx-hook.cpp">
+      <Filter>资源文件\Library\akebi</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\CPP\Font.cpp">
+      <Filter>资源文件\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\IMGUI\imgui_impl_dx12.cpp">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\CPP\DiskIO.cpp">
+      <Filter>资源文件\Library</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Library\Library.h">
+      <Filter>资源文件\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\detours\detours.h">
+      <Filter>资源文件\Library\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\detours\detver.h">
+      <Filter>资源文件\Library\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imgui.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imgui_impl_dx11.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imgui_stdlib.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imconfig.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imgui_internal.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imstb_rectpack.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imstb_textedit.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imstb_truetype.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imgui_impl_dx9.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imgui_impl_dx10.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imgui_impl_win32.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\json\include\nlohmann\json.hpp">
+      <Filter>资源文件\Library\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\simpleini\SimpleIni.h">
+      <Filter>资源文件\Library\simpleini</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\magic_enum\include\magic_enum.hpp">
+      <Filter>资源文件\Library\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\magic_enum\include\magic_enum_format.hpp">
+      <Filter>资源文件\Library\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\magic_enum\include\magic_enum_fuse.hpp">
+      <Filter>资源文件\Library\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\stb\stb_image_resize.h">
+      <Filter>资源文件\Library\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\args.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\chrono.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\color.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\compile.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\core.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\format.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\format-inl.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\os.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\ostream.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\printf.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\ranges.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\std.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fmt\include\fmt\xchar.h">
+      <Filter>资源文件\Library\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\imnodes\imnodes.h">
+      <Filter>资源文件\Library\imnodes</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\imnodes\imnodes_internal.h">
+      <Filter>资源文件\Library\imnodes</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\implot\implot.h">
+      <Filter>资源文件\Library\impot</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\implot\implot_internal.h">
+      <Filter>资源文件\Library\impot</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\IMGUI\imgui_impl_dx12.h">
+      <Filter>资源文件\Library\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Library\detours\detours-x64.lib">
+      <Filter>资源文件\Library\detours</Filter>
+    </Library>
+    <Library Include="Library\detours\detours-x86.lib">
+      <Filter>资源文件\Library\detours</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

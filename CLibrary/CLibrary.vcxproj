@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{56ba0c8e-9002-42ed-a859-459d86b0060b}</ProjectGuid>
+    <RootNamespace>CLibrary</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)$(Configuration)\$(PlatformTarget)\Temp</IntDir>
+    <TargetName>CLibrary</TargetName>
+    <OutDir>$(SolutionDir)$(Configuration)\$(PlatformTarget)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(SolutionDir)$(Configuration)\$(PlatformTarget)\Temp</IntDir>
+    <TargetName>CLibrary</TargetName>
+    <OutDir>$(SolutionDir)$(Configuration)\$(PlatformTarget)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Configuration)\$(PlatformTarget)</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\$(PlatformTarget)\Temp</IntDir>
+    <TargetName>CLibrary</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Configuration)\$(PlatformTarget)</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\$(PlatformTarget)\Temp</IntDir>
+    <TargetName>CLibrary</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;CLIBRARY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir)CLibrary\Library\driver;$(SolutionDir)CLibrary\Library\json\include\nlohmann;$(SolutionDir)CLibrary\Library\Akebi;$(SolutionDir)CLibrary\Library\imnodes;$(SolutionDir)CLibrary\Library\fmt\include\fmt;$(SolutionDir)CLibrary\Library\magic_enum\include;$(SolutionDir)CLibrary\Library\implot;$(SolutionDir)CLibrary\Library\stb;$(SolutionDir)CLibrary\Library\simpleini;$(SolutionDir)CLibrary\Library;$(SolutionDir)CLibrary\Library\json\include;$(SolutionDir)CLibrary\Library\detours;$(SolutionDir)CLibrary\Library\IMGUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;CLIBRARY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir)CLibrary\Library\driver;$(SolutionDir)CLibrary\Library\json\include\nlohmann;$(SolutionDir)CLibrary\Library\Akebi;$(SolutionDir)CLibrary\Library\imnodes;$(SolutionDir)CLibrary\Library\fmt\include\fmt;$(SolutionDir)CLibrary\Library\magic_enum\include;$(SolutionDir)CLibrary\Library\implot;$(SolutionDir)CLibrary\Library\stb;$(SolutionDir)CLibrary\Library\simpleini;$(SolutionDir)CLibrary\Library;$(SolutionDir)CLibrary\Library\json\include;$(SolutionDir)CLibrary\Library\detours;$(SolutionDir)CLibrary\Library\IMGUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;CLIBRARY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir)CLibrary\Library\driver;$(SolutionDir)CLibrary\Library\json\include\nlohmann;$(SolutionDir)CLibrary\Library\Akebi;$(SolutionDir)CLibrary\Library\imnodes;$(SolutionDir)CLibrary\Library\fmt\include\fmt;$(SolutionDir)CLibrary\Library\magic_enum\include;$(SolutionDir)CLibrary\Library\implot;$(SolutionDir)CLibrary\Library\stb;$(SolutionDir)CLibrary\Library\simpleini;$(SolutionDir)CLibrary\Library;$(SolutionDir)CLibrary\Library\json\include;$(SolutionDir)CLibrary\Library\detours;$(SolutionDir)CLibrary\Library\IMGUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>_AMD64_;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;CLIBRARY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)CLibrary\Library\driver;$(SolutionDir)CLibrary\Library\json\include\nlohmann;$(SolutionDir)CLibrary\Library\Akebi;$(SolutionDir)CLibrary\Library\imnodes;$(SolutionDir)CLibrary\Library\fmt\include\fmt;$(SolutionDir)CLibrary\Library\magic_enum\include;$(SolutionDir)CLibrary\Library\implot;$(SolutionDir)CLibrary\Library\stb;$(SolutionDir)CLibrary\Library\simpleini;$(SolutionDir)CLibrary\Library;$(SolutionDir)CLibrary\Library\json\include;$(SolutionDir)CLibrary\Library\detours;$(SolutionDir)CLibrary\Library\IMGUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;dxgi.lib;Library\detours\detours-x64.lib;Library\detours\detours-x86.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)/Lib/x64</AdditionalLibraryDirectories>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Library\Akebi\dx-hook.cpp" />
+    <ClCompile Include="Library\CPP\DiskIO.cpp" />
+    <ClCompile Include="Library\CPP\Font.cpp" />
+    <ClCompile Include="Library\CPP\Log.cpp" />
+    <ClCompile Include="Library\CPP\Memory.cpp" />
+    <ClCompile Include="Library\CPP\Process.cpp" />
+    <ClCompile Include="Library\CPP\Text.cpp" />
+    <ClCompile Include="Library\CPP\Time.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_demo.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_draw.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_impl_dx10.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_impl_dx11.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_impl_dx12.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_impl_dx9.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_impl_win32.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_stdlib.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_tables.cpp" />
+    <ClCompile Include="Library\IMGUI\imgui_widgets.cpp" />
+    <ClCompile Include="Library\imnodes\imnodes.cpp" />
+    <ClCompile Include="Library\implot\implot.cpp" />
+    <ClCompile Include="Library\implot\implot_demo.cpp" />
+    <ClCompile Include="Library\implot\implot_items.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Library\detours\detours.h" />
+    <ClInclude Include="Library\detours\detver.h" />
+    <ClInclude Include="Library\fmt\include\fmt\args.h" />
+    <ClInclude Include="Library\fmt\include\fmt\chrono.h" />
+    <ClInclude Include="Library\fmt\include\fmt\color.h" />
+    <ClInclude Include="Library\fmt\include\fmt\compile.h" />
+    <ClInclude Include="Library\fmt\include\fmt\core.h" />
+    <ClInclude Include="Library\fmt\include\fmt\format-inl.h" />
+    <ClInclude Include="Library\fmt\include\fmt\format.h" />
+    <ClInclude Include="Library\fmt\include\fmt\os.h" />
+    <ClInclude Include="Library\fmt\include\fmt\ostream.h" />
+    <ClInclude Include="Library\fmt\include\fmt\printf.h" />
+    <ClInclude Include="Library\fmt\include\fmt\ranges.h" />
+    <ClInclude Include="Library\fmt\include\fmt\std.h" />
+    <ClInclude Include="Library\fmt\include\fmt\xchar.h" />
+    <ClInclude Include="Library\IMGUI\imconfig.h" />
+    <ClInclude Include="Library\IMGUI\imgui.h" />
+    <ClInclude Include="Library\IMGUI\imgui_impl_dx10.h" />
+    <ClInclude Include="Library\IMGUI\imgui_impl_dx11.h" />
+    <ClInclude Include="Library\IMGUI\imgui_impl_dx12.h" />
+    <ClInclude Include="Library\IMGUI\imgui_impl_dx9.h" />
+    <ClInclude Include="Library\IMGUI\imgui_impl_win32.h" />
+    <ClInclude Include="Library\IMGUI\imgui_internal.h" />
+    <ClInclude Include="Library\IMGUI\imgui_stdlib.h" />
+    <ClInclude Include="Library\IMGUI\imstb_rectpack.h" />
+    <ClInclude Include="Library\IMGUI\imstb_textedit.h" />
+    <ClInclude Include="Library\IMGUI\imstb_truetype.h" />
+    <ClInclude Include="Library\imnodes\imnodes.h" />
+    <ClInclude Include="Library\imnodes\imnodes_internal.h" />
+    <ClInclude Include="Library\implot\implot.h" />
+    <ClInclude Include="Library\implot\implot_internal.h" />
+    <ClInclude Include="Library\json\include\nlohmann\json.hpp" />
+    <ClInclude Include="Library\Library.h" />
+    <ClInclude Include="Library\magic_enum\include\magic_enum.hpp" />
+    <ClInclude Include="Library\magic_enum\include\magic_enum_format.hpp" />
+    <ClInclude Include="Library\magic_enum\include\magic_enum_fuse.hpp" />
+    <ClInclude Include="Library\simpleini\SimpleIni.h" />
+    <ClInclude Include="Library\stb\stb_image_resize.h" />
+    <ClInclude Include="main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Library\detours\detours-x64.lib" />
+    <Library Include="Library\detours\detours-x86.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
