@@ -34,11 +34,30 @@ namespace Cheat::Memory
 	{
 		string Logs = "";
 		Memory::event_module = GetModuleHandleA("GameAssembly.dll");
+		Memory::event_module = GetModuleHandleA("GameAssembly.dll");
+		Memory::matrix_module = GetModuleHandleA("UnityPlayer.dll");
+
+		Memory::pid = getpid();
+		Memory::hProcess = (HANDLE)GetHandleById(Memory::pid);
+
+
+
+		string Logs = "";
+		Logs += "pid:";
+		Logs += to_string((int)Memory::pid);
+		LOG_OUT(L_DEBUG, Logs.c_str());
+
+		Logs.clear();
+		Logs += "hProcess:";
+		Logs += to_string((int)Memory::hProcess);
+		LOG_OUT(L_DEBUG, Logs.c_str());
+
 		Logs.clear();
 		Logs += "event_module:";
 		Logs += to_string((int)Memory::event_module);
 		LOG_OUT(L_DEBUG, Logs.c_str());
 		Memory::matrix_module = GetModuleHandleA("UnityPlayer.dll");
+
 		Logs.clear();
 		Logs += "matrix_module:";
 		Logs += to_string((int)Memory::matrix_module);
@@ -50,6 +69,7 @@ namespace Cheat::Memory
 
 bool m_IsBlockingInput;
 bool _Customthemes;
+
 namespace Cheat::Draw
 {
 	void Draw::DrawClass::DrawMainMenu()
