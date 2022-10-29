@@ -9,16 +9,14 @@ namespace Cheat
 
 	namespace Memory
 	{
-		HANDLE hProcess;
-		DWORD pid;
 
 		HMODULE event_module;
 		HMODULE matrix_module;
 
-		DWORD event_Base;
-		DWORD matrix_Base;
+		int event_Base;
+		int matrix_Base;
 
-		enum event_module_Pointer :DWORD
+		enum event_module_Pointer :int
 		{
 			eventBase = 0x3532484,
 			event_Pointer_L1 = 0x5C,
@@ -42,7 +40,7 @@ namespace Cheat
 
 		};
 		
-		enum matrix_module_Pointer :DWORD
+		enum matrix_module_Pointer :int
 		{
 			matrixBase = 0x129B0C0,
 			matrix_Pointer_L1 = 0x10,
@@ -53,21 +51,19 @@ namespace Cheat
 			matrix_Pointer_L6 = 0xC4,
 		};
 
-		LibMemory RD_Memory;
-
 		void GetMem();
 	}
 
 	namespace Draw
 	{
+		void DrawESP();
 		class DrawClass
 		{
 		public:
 			void DrawMainMenu();
 
 		private:
-			bool m_IsBlockingInput;
-			bool _Customthemes;
+
 		};
 	}
 }

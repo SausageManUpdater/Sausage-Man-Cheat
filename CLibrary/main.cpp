@@ -18,7 +18,6 @@ namespace Cheat
     void run()
     {
         Memory::GetMem();
-		Memory::RD_Memory.initialize(Memory::RD_Memory.Ntdll);
         InitD3DHook(D3D11, &Draws);
     }
 
@@ -33,49 +32,24 @@ namespace Cheat::Memory
 {
 	void Memory::GetMem()
 	{
-		Memory::event_module = GetModuleHandleA("GameAssembly.dll");
-		Memory::matrix_module = GetModuleHandleA("UnityPlayer.dll");
-
-		Memory::pid = getpid();
-		Memory::hProcess = (HANDLE)GetHandleById(Memory::pid);
-
-		Memory::event_Base = (DWORD)event_module + Memory::event_module_Pointer::eventBase;
-		Memory::matrix_Base = (DWORD)matrix_module + Memory::matrix_module_Pointer::matrixBase;
-
-
-
 		string Logs = "";
-		Logs += "pid:";
-		Logs += to_string((int)Memory::pid);
-		LOG_OUT(L_DEBUG, Logs.c_str());
-
-		Logs.clear();
-		Logs += "hProcess:";
-		Logs += to_string((int)Memory::hProcess);
-		LOG_OUT(L_DEBUG, Logs.c_str());
-
+		Memory::event_module = GetModuleHandleA("GameAssembly.dll");
 		Logs.clear();
 		Logs += "event_module:";
 		Logs += to_string((int)Memory::event_module);
 		LOG_OUT(L_DEBUG, Logs.c_str());
-
+		Memory::matrix_module = GetModuleHandleA("UnityPlayer.dll");
 		Logs.clear();
 		Logs += "matrix_module:";
 		Logs += to_string((int)Memory::matrix_module);
 		LOG_OUT(L_DEBUG, Logs.c_str());
-
-		Logs.clear();
-		Logs += "event_Base:";
-		Logs += to_string((int)Memory::event_Base);
-		LOG_OUT(L_DEBUG, Logs.c_str());
-
-		Logs.clear();
-		Logs += "matrix_Base:";
-		Logs += to_string((int)Memory::matrix_Base);
-		LOG_OUT(L_DEBUG, Logs.c_str());
+		Memory::event_Base = ((int)event_module + Memory::event_module_Pointer::eventBase);
+		Memory::matrix_Base = ((int)matrix_module + Memory::matrix_module_Pointer::matrixBase);
 	}
 }
 
+bool m_IsBlockingInput;
+bool _Customthemes;
 namespace Cheat::Draw
 {
 	void Draw::DrawClass::DrawMainMenu()
@@ -133,41 +107,47 @@ namespace Cheat::Draw
 		ImGui::End();
 
 		ImGui::ShowDemoWindow(&_Customthemes);
+		
+	}
+}
+namespace Cheat::Draw
+{
+	void DrawESP()
+	{
 		ImDrawList* DrawList = ImGui::GetBackgroundDrawList();
-		float matrix[4][4];
 		float WindowsH, WindowsW;
 		WindowsH = ImGui::GetWindowHeight() / 2;
 		WindowsW = ImGui::GetWindowWidth() / 2;
-		DWORD matrix_L1 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, Memory::matrix_Base)+ Memory::matrix_module_Pointer::matrix_Pointer_L1;
-		DWORD matrix_L2 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, matrix_L1) + Memory::matrix_module_Pointer::matrix_Pointer_L2;
-		DWORD matrix_L3 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, matrix_L2) + Memory::matrix_module_Pointer::matrix_Pointer_L3;
-		DWORD matrix_L4 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, matrix_L4) + Memory::matrix_module_Pointer::matrix_Pointer_L4;
-		DWORD matrix_L5 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, matrix_L4) + Memory::matrix_module_Pointer::matrix_Pointer_L5;
-		DWORD matrix_address = matrix_L5 + Memory::matrix_module_Pointer::matrix_Pointer_L6;
-		Memory::RD_Memory.Read(Memory::hProcess, matrix_address, &matrix, sizeof(float[4][4]));
-		DWORD event_L1 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, Memory::event_Base) + Memory::event_module_Pointer::event_Pointer_L1;
-		DWORD event_L2 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, event_L1) + Memory::event_module_Pointer::event_Pointer_L2;
-		DWORD event_L3 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, event_L2) + Memory::event_module_Pointer::event_Pointer_L3;
-		DWORD event_L4 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, event_L3) + Memory::event_module_Pointer::event_Pointer_L4;
-		DWORD event_L5 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, event_L4) + Memory::event_module_Pointer::event_Pointer_L5;
-		
-		DrawList->AddText(ImVec2(5, 5), D3DCOLOR_ARGB(255, 0, 0, 255), to_string(matrix_address).c_str());
-
+		int matrix_L1 = *((int*)(Memory::matrix_Base)) + Memory::matrix_module_Pointer::matrix_Pointer_L1;
+		int matrix_L2 = *(int*)matrix_L1 + Memory::matrix_module_Pointer::matrix_Pointer_L2;
+		int matrix_L3 = *(int*)matrix_L2 + Memory::matrix_module_Pointer::matrix_Pointer_L3;
+		int matrix_L4 = *(int*)matrix_L3 + Memory::matrix_module_Pointer::matrix_Pointer_L4;
+		int matrix_L5 = *(int*)matrix_L4 + Memory::matrix_module_Pointer::matrix_Pointer_L5;
+		int matrix_address = *(int*)matrix_L5 + Memory::matrix_module_Pointer::matrix_Pointer_L6;
+		float matrix[4][4] =
+		{
+		*(float*)(matrix_address + 0x00),*(float*)(matrix_address + 0x04),*(float*)(matrix_address + 0x08),*(float*)(matrix_address + 0x0C),
+		*(float*)(matrix_address + 0x10),*(float*)(matrix_address + 0x14),*(float*)(matrix_address + 0x18),*(float*)(matrix_address + 0x1C),
+		*(float*)(matrix_address + 0x20),*(float*)(matrix_address + 0x24),*(float*)(matrix_address + 0x28),*(float*)(matrix_address + 0x2C),
+		*(float*)(matrix_address + 0x30),*(float*)(matrix_address + 0x34),*(float*)(matrix_address + 0x38),*(float*)(matrix_address + 0x3C)
+		};
+		int event_L1 = *((int*)(Memory::event_Base)) + Memory::event_module_Pointer::event_Pointer_L1;
+		int event_L2 = *(int*)event_L1 + Memory::event_module_Pointer::event_Pointer_L2;
+		int event_L3 = *(int*)event_L2 + Memory::event_module_Pointer::event_Pointer_L3;
+		int event_L4 = *(int*)event_L3 + Memory::event_module_Pointer::event_Pointer_L4;
+		int event_L5 = *(int*)event_L4 + Memory::event_module_Pointer::event_Pointer_L5;
 		for (int i = 0; i < 100; i++)
 		{
-			DWORD event_L6 = Memory::RD_Memory.Read_int((DWORD)Memory::hProcess, event_L5) + (Memory::event_module_Pointer::event_Pointer_L6 + (i * Memory::event_module_Pointer::Pointer_L6_Product));
+			int event_L6 = *(int*)event_L5 + (Memory::event_module_Pointer::event_Pointer_L6 + (i * Memory::event_module_Pointer::Pointer_L6_Product));
 			float X, Y, Z, ViewW, ViewX, ViewY;
-			X = Memory::RD_Memory.Read_float((DWORD)Memory::hProcess, event_L6 + Memory::event_module_Pointer::Pointer_X);
-			Y = Memory::RD_Memory.Read_float((DWORD)Memory::hProcess, event_L6 + Memory::event_module_Pointer::Pointer_Y);
-			Z = Memory::RD_Memory.Read_float((DWORD)Memory::hProcess, event_L6 + Memory::event_module_Pointer::Pointer_Z);
+			X = *(float*)(*(int*)event_L6 + Memory::event_module_Pointer::Pointer_X);
+			Y = *(float*)(*(int*)event_L6 + Memory::event_module_Pointer::Pointer_Y);
+			Z = *(float*)(*(int*)event_L6 + Memory::event_module_Pointer::Pointer_Z);
 			ViewW = matrix[3][0] * X + matrix[3][1] * Y + matrix[3][2] * Z + matrix[3][3];
-			if (!ViewW < 0)
-			{
-				ViewW = 1 / ViewW;
-				ViewX = WindowsW + (matrix[0][0] * X + matrix[0][1] * Y + matrix[0][2] * Z + matrix[0][3]) * ViewW * WindowsW;
-				ViewY = WindowsH - (matrix[1][0] * X + matrix[1][1] * Y + matrix[1][2] * Z + matrix[1][3]) * ViewW * WindowsH;
-				DrawList->AddText(ImVec2(ViewX, ViewY), D3DCOLOR_ARGB(255, 255, 5, 5), "Test");
-			}
+			ViewW = 1 / ViewW;
+			ViewX = WindowsW + (matrix[0][0] * X + matrix[0][1] * Y + matrix[0][2] * Z + matrix[0][3]) * ViewW * WindowsW;
+			ViewY = WindowsH - (matrix[1][0] * X + matrix[1][1] * Y + matrix[1][2] * (Z + 1.75) + matrix[1][3]) * ViewW * WindowsH;
+
 		}
 	}
 }
