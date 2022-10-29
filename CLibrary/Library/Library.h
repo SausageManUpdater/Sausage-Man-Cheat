@@ -207,6 +207,11 @@ namespace Library
 		//初始化(读写类型)
 		void initialize(Type readtype);
 
+		//写内存
+		bool Read(HANDLE hProcess, ULONG64 address, LPVOID IPBUFFER, SIZE_T size);
+		//读内存
+		bool Write(HANDLE hProcess, ULONG64 address, LPVOID IPBUFFER, SIZE_T size);
+
 		//读字节型(进程句柄,地址)
 		BYTE Read_byte(DWORD pid, ULONG64 address);
 		//写字节型(进程句柄,地址,值)

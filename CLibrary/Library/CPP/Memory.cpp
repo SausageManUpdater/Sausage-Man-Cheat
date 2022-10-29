@@ -235,6 +235,44 @@ namespace Library
 		return	 true;
 	}
 
+	bool LibMemory::Read(HANDLE hProcess, ULONG64 address,LPVOID IPBUFFER ,SIZE_T size)
+	{;
+		switch (Mode)
+		{
+		case Library::LibMemory::Ntdll:
+			return __NtWow64ReadVirtualMemory64(hProcess, address, IPBUFFER, size, NULL);
+			break;
+		case Library::LibMemory::Common:
+			return ReadProcessMemory(hProcess, (LPVOID)address, IPBUFFER, size, NULL);
+			break;
+		case Library::LibMemory::Driver:
+			LOG_OUT(L_ERROR, "unsupport driver!");
+			return 0;
+			break;
+		default:
+			break;
+		}
+	}
+
+	bool LibMemory::Write(HANDLE hProcess, ULONG64 address, LPVOID IPBUFFER, SIZE_T size)
+	{
+		switch (Mode)
+		{
+		case Library::LibMemory::Ntdll:
+			return __NtWow64WriteVirtualMemory64(hProcess, address, IPBUFFER, size, NULL);
+			break;
+		case Library::LibMemory::Common:
+			return WriteProcessMemory(hProcess, (LPVOID)address, IPBUFFER, size, NULL);
+			break;
+		case Library::LibMemory::Driver:
+			LOG_OUT(L_ERROR, "unsupport driver!");
+			return 0;
+			break;
+		default:
+			break;
+		}
+	}
+
 	BYTE LibMemory::Read_byte(DWORD pid, ULONG64 address)
 	{
 		BYTE Temp;
