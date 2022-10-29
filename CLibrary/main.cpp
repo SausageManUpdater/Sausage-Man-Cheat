@@ -34,23 +34,7 @@ namespace Cheat::Memory
 	{
 		string Logs = "";
 		Memory::event_module = GetModuleHandleA("GameAssembly.dll");
-		Memory::event_module = GetModuleHandleA("GameAssembly.dll");
 		Memory::matrix_module = GetModuleHandleA("UnityPlayer.dll");
-
-		Memory::pid = getpid();
-		Memory::hProcess = (HANDLE)GetHandleById(Memory::pid);
-
-
-
-		string Logs = "";
-		Logs += "pid:";
-		Logs += to_string((int)Memory::pid);
-		LOG_OUT(L_DEBUG, Logs.c_str());
-
-		Logs.clear();
-		Logs += "hProcess:";
-		Logs += to_string((int)Memory::hProcess);
-		LOG_OUT(L_DEBUG, Logs.c_str());
 
 		Logs.clear();
 		Logs += "event_module:";
@@ -168,6 +152,8 @@ namespace Cheat::Draw
 			ViewX = WindowsW + (matrix[0][0] * X + matrix[0][1] * Y + matrix[0][2] * Z + matrix[0][3]) * ViewW * WindowsW;
 			ViewY = WindowsH - (matrix[1][0] * X + matrix[1][1] * Y + matrix[1][2] * (Z + 1.75) + matrix[1][3]) * ViewW * WindowsH;
 
+			DrawList->AddText(ImVec2(5, 5), D3DCOLOR_RGBA(255, 0, 0, 255), to_string(ViewX).c_str());
+			DrawList->AddText(ImVec2(5, 5), D3DCOLOR_RGBA(255, 0, 0, 255), to_string(ViewY).c_str());
 		}
 	}
 }
